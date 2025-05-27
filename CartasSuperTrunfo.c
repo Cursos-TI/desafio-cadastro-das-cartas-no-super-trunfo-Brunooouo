@@ -2,68 +2,62 @@
 
 int main(){
 
-    //Para conseguir deixar a saída de dados igual ao exemplo, tive que fazer algumas mudanças nas variáveis.
     char estado = 'A';
     char nome[] = "A01";
     char nome2[] = "Fortaleza";
-    //Mudei a população por conta que não havia percebido que tinha colocado um número grande demais.
-    int populacao = 10286780;
+    unsigned long int populacao = 10286780;
     float area = 1173.84;
-    //Mudei o pib por conta que aprendi só agora a como deixar 5 números quando for imprimir.
     float pib = 256923874297.89;
     int turisticos = 74;
     float densidade;
     float percapita;
-
-    printf("Carta 1: \n");
-    printf("Estado: %c \n", estado);
-    printf("Código: %s \n",nome);
-    printf("Nome da Cidade: %s \n", nome2);
-    printf("População: %d \n", populacao);
-    printf("Área: %.2f km²\n", area);
-
-    //Adicionei o 1e9 para deixar apenas 3 dígitos.
-    printf("PIB: %.2f bilhões de reais \n", pib / 1e9);
-    printf("Números de Pontos Turísticos: %d \n", turisticos);
+    float SuperPoder;
 
     densidade = (populacao / area);
-    printf("Densidade Populacional: %.2f hab/km² \n", densidade);
 
     percapita = (pib / populacao);
-    printf("PIB per capita: %.2f reais \n", percapita);
-    printf("\n");
-    
 
+    SuperPoder = (float) populacao + (float) area + (float) pib + (float) turisticos + (float) percapita + (float) (densidade / -1);
+
+    
     char estado1 = 'B';
     char nome1[] = "B01";
     char nome3[] = "Pernambuco";
-    int populacao1 = 9539029;
-    //Mudei a area1 por conta do mesmo motivo da população da Carta 1.
+    unsigned long int populacao1 = 9539029;
     float area1 = 1945.90;
-    //Mudei o pib1 por conta que aprendi só agora a como deixar 5 números quando for imprimir.
     float pib1 = 356342763154.64;
     int turisticos1 = 89;
     float densidade1;
     float percapita1;
-
-    printf("Carta 2: \n");
-    printf("Estado: %c \n", estado1);
-    printf("Código: %s \n", nome1);
-    printf("Nome da Cidade: %s \n", nome3);
-    printf("População: %d \n", populacao1);
-    printf("Área: %.2f km²\n", area1);
-
-    //Adicionei o 1e9 para deixar apenas 3 dígitos.
-    printf("PIB: %.2f bilhões de reais \n", pib1 / 1e9);
-    printf("Números de Pontos Turísticos: %d \n", turisticos1);
-
+    float SuperPoder1;
+    
     densidade1 = (populacao1 / area1);
-    printf("Densidade Populacional: %.2f hab/km² \n", densidade1);
 
     percapita1 = (pib1 / populacao1);
-    printf("PIB per capita: %.2f reais \n", percapita1);
-    printf("\n");
+
+    SuperPoder1 = (float) populacao1 + (float) area1 + (float) pib1 + (float) turisticos1 + (float) percapita1 + (float) (densidade1 / -1);
+
+    
+    char Carta1[] = "Carta 1 venceu";
+    char Carta2[] = "Carta 2 venceu";
+
+    int resultado1, resultado2, resultado3, resultado4, resultado5, resultado6, resultado7;
+    resultado1 = (populacao > populacao1);
+    resultado2 = (area > area1);
+    resultado3 = (pib > pib1);
+    resultado4 = (turisticos > turisticos1);
+    resultado5 = (densidade > densidade1);
+    resultado6 = (percapita > percapita1);
+    resultado7 = (SuperPoder > SuperPoder1);
+    
+    printf("Comparação de Cartas:\n");
+    printf("População: %s (%d)\n", Carta1, resultado1);
+    printf("Área: %s (%d)\n", Carta2, resultado2);
+    printf("PIB: %s (%d)\n", Carta2, resultado3);
+    printf("Pontos Turísticos: %s (%d)\n",Carta2, resultado4);
+    printf("Densidade Populacional: %s (%d)\n", Carta1, resultado5);
+    printf("PIB per capita: %s (%d)\n", Carta2, resultado6);
+    printf("Super Poder: %s (%d)\n", Carta2, resultado7);
 
     return 0;
- 
 }
